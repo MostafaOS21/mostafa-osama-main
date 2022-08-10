@@ -423,10 +423,6 @@ section.landpage {
     padding: 10px 15px;
     left: 15%;
   }
-
-  /* .landpage .my-image {
-    
-  } */
 }
 
 /* About Me */
@@ -770,9 +766,22 @@ section.contact form {
   gap: 15px;
 }
 
+@media (max-width: 830px) {
+  section.contact form {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 section.contact form div {
   position: relative;
   width: 100%;
+}
+
+@media (max-width: 830px) {
+  section.contact form div {
+    width: 95%;
+  }
 }
 
 section.contact form input {
@@ -864,6 +873,15 @@ footer i {
 
 footer span {
   color: var(--main-color);
+}
+
+@media (max-width: 830px) {
+  footer {
+    padding: 10px;
+  }
+  footer, footer i {
+    font-size: 16px;
+  }
 }
 
 /* Animations */

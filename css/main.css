@@ -49,8 +49,10 @@ body.loading {
   transition: opacity 0.6s;
 }
 
-.div1,.div2,.div3 {
-  animation: animate 1s infinite linear ;
+.div1,
+.div2,
+.div3 {
+  animation: animate 1s infinite linear;
   border-radius: 50%;
   border-top-color: transparent;
   border-right-color: transparent;
@@ -94,14 +96,12 @@ body.loading {
   border-top-color: transparent;
 }
 
-
-
 @keyframes animate {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -435,17 +435,63 @@ section.about-me {
   flex-direction: column;
 }
 
-section.about-me p {
-  font-size: 25px;
+section.about-me .text {
   width: 80%;
+  background-color: var(--black);
+  padding: 22px;
+  margin-top: 15px;
+  transition: background-color 0.3s , outline 0.6s, opacity 0.2s;
+  transition-timing-function: ease-in-out;
+  cursor: default;
+  border-radius: 10px;
+  outline: 3px solid;
+  opacity: 0;
+}
+
+section.about-me.on-screen  .text {
+  background-color: #1b1a1a;
+  outline: 2px solid var(--main-color);
+  opacity: 1;
+}
+
+section.about-me .text h3 {
+  font-size: 34px;
   color: var(--white);
-  background-color: var(--gray-col);
-  padding: 10px;
-  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 100;
+  position: relative;
+}
+
+section.about-me .text h3::after {
+  content: '';
+  position: absolute;
+  width: 3%;
+  height: 2px;
+  background-color: var(--main-color);
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.8s ease-in-out;
+}
+
+section.about-me.on-screen .text h3::after {
+  width: 10%;
+}
+
+section.about-me .text h3 span {
+  color: var(--main-color);
+  font-weight: 500;
+}
+
+section.about-me p {
+  margin: auto;
+  font-size: 25px;
+  color: var(--white);
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.6s, transform 0.6s;
   transform: scale(0);
+  line-height: 1.6;
 }
 
 @media (max-width: 830px) {
@@ -879,7 +925,8 @@ footer span {
   footer {
     padding: 10px;
   }
-  footer, footer i {
+  footer,
+  footer i {
     font-size: 16px;
   }
 }
